@@ -1,0 +1,20 @@
+{
+  "name": "github-starer",
+  "version": "1.0.0",
+  "description": "> 一个管理 Star 的桌面程序",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xrr2016/github-starer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xrr2016/github-starer/issues"
+  },
+  "homepage": "https://github.com/xrr2016/github-starer#readme"
+}
