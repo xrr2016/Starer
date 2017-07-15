@@ -2,8 +2,8 @@ const asar = require('asar')
 const { resolve } = require('path')
 
 const src = resolve(__dirname, 'src')
-const dist = resolve(__dirname, 'dist')
+const name = 'starer.asar'
 
-asar.craetePackage(src, dist, () => {
+asar.createPackage(src, name, () => {
   console.log('Asar done.')
 })
