@@ -5051,6 +5051,10 @@ vue-hot-reload-api@^2.0.1:
   version "2.3.0"
   resolved "http://r.cnpmjs.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.0.tgz#97976142405d13d8efae154749e88c4e358cf926"
 
+vue-router@^3.0.1:
+  version "3.0.1"
+  resolved "http://r.cnpmjs.org/vue-router/download/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
+
 vue-template-compiler@^2.0.0-alpha.8:
   version "2.5.16"
   resolved "http://r.cnpmjs.org/vue-template-compiler/download/vue-template-compiler-2.5.16.tgz#93b48570e56c720cdf3f051cc15287c26fbd04cb"
@@ -5065,6 +5069,14 @@ vue-template-es2015-compiler@^1.4.2:
 vue@^2.1.7:
   version "2.5.16"
   resolved "http://r.cnpmjs.org/vue/download/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
+
+vuetify@^1.0.10:
+  version "1.0.10"
+  resolved "http://r.cnpmjs.org/vuetify/download/vuetify-1.0.10.tgz#875d2d27d95470ce977ce9c705bb41b5b547e801"
+
+vuex@^3.0.1:
+  version "3.0.1"
+  resolved "http://r.cnpmjs.org/vuex/download/vuex-3.0.1.tgz#e761352ebe0af537d4bb755a9b9dc4be3df7efd2"
 
 webidl-conversions@^2.0.0:
   version "2.0.1"
