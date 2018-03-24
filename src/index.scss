@@ -1,3 +1,35 @@
-.app {
-  background-color: aquamarine;
+// @import './app.scss';
+
+:root {
+  --bgColor: #f2f2f2;
+  --TextColor: #333333;
+}
+html {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bgColor);
+  color: var(--TextColor);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+    Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-app-region: drag;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+@function px2rem($px) {
+  @return ($px / 32px) + rem;
+}
+
+.input-group.input-group--slider.input-group--prepend-icon .slider {
+  margin-left: 16px;
 }

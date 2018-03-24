@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet">
-     <link href="index.scss" rel="stylesheet">
-  </head>
-  <body>
-    <main id="app"></main>
-  </body>
 
-  <script>
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link href="index.scss" rel="stylesheet">
+</head>
+
+<body>
+  <main id="app"></main>
+</body>
+
+<script>
   import Vue from 'vue'
   import App from './App.vue'
   import Vuetify from 'vuetify'
@@ -17,5 +21,6 @@
   Vue.use(Vuetify)
 
   new Vue(App).$mount('#app')
-  </script>
+</script>
+
 </html>

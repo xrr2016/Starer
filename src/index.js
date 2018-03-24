@@ -12,11 +12,11 @@ if (isDevMode) enableLiveReload()
 
 const createWindow = async () => {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600
+  mainWindow = new BrowserWindow({ width: 320, height: 320, frame: false, show: false })
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show()
   })
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`)
@@ -24,7 +24,7 @@ const createWindow = async () => {
   // Open the DevTools.
   if (isDevMode) {
     await installExtension(VUEJS_DEVTOOLS)
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
   }
 
   // Emitted when the window is closed.
