@@ -12,11 +12,18 @@ if (isDevMode) enableLiveReload()
 
 const createWindow = async () => {
   // Create the browser window.
-  mainWindow = new BrowserWindow({ width: 320, height: 320, frame: false, show: false })
-  mainWindow.once('ready-to-show', () => {
-    mainWindow.show()
+  mainWindow = new BrowserWindow({
+    width: 375,
+    height: 568,
+    minWidth: 320,
+    minHeight: 320,
+    maxHeight: 789,
+    frame: false,
+    title: 'Working',
+    backgroundColor: '#f2f2f2'
   })
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
+  mainWindow.setProgressBar(0.5)
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`)
@@ -24,7 +31,7 @@ const createWindow = async () => {
   // Open the DevTools.
   if (isDevMode) {
     await installExtension(VUEJS_DEVTOOLS)
-    // mainWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools()
   }
 
   // Emitted when the window is closed.

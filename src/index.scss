@@ -1,9 +1,9 @@
 // @import './app.scss';
-
 :root {
   --bgColor: #f2f2f2;
-  --TextColor: #333333;
+  --TextColor: #444444;
 }
+
 html {
   box-sizing: border-box;
 }
@@ -26,10 +26,95 @@ body {
   box-sizing: inherit;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 @function px2rem($px) {
   @return ($px / 32px) + rem;
 }
 
 .input-group.input-group--slider.input-group--prepend-icon .slider {
+  position: relative;
   margin-left: 16px;
+}
+
+.plan-time-label {
+  position: relative;
+  min-width: 62px;
+  height: 24px;
+  top: 22px;
+  right: 0;
+  text-align: right;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.2s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateX(4px);
+  opacity: 0;
+}
+
+.waves {
+  width: 310px;
+  height: 310px;
+  margin: 20px auto;
+  border-radius: 50%;
+  box-shadow: 0 2px 30px rgba(black, 0.2);
+  background: lighten(#1de9b6, 10%);
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  &::after {
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(#e1f5fe, 1),
+      rgba(#def, 0) 80%,
+      rgba(white, 0.5)
+    );
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+  }
+  .wave {
+    opacity: 0.4;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    background: #0af;
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+  }
+  .wave-three {
+    animation: drift 5000ms infinite linear;
+  }
+  .wave-two {
+    animation: drift 7000ms infinite linear;
+    opacity: 0.1;
+    background: #1de9b6;
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
 }
