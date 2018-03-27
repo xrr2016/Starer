@@ -10,23 +10,29 @@
         <v-list>
           <v-list-tile>
             <v-list-tile-action>
-              <v-switch v-model="playMusic"></v-switch>
+              <v-switch v-model="playMusic" :value="false" @change="togglePlayMusic"></v-switch>
             </v-list-tile-action>
             <v-list-tile-sub-title>Play music</v-list-tile-sub-title>
           </v-list-tile>
           <v-list-tile>
             <v-list-tile-action>
-              <v-switch v-model="darkTheme"></v-switch>
+              <v-switch v-model="darkTheme" :value="true" @change="toggleTheme"></v-switch>
             </v-list-tile-action>
             <v-list-tile-sub-title>Dark theme</v-list-tile-sub-title>
           </v-list-tile>
+          <v-list-tile>
+            <v-list-tile-action>
+              <v-switch v-model="zh_cn" :value="true" @change="toggleChinese"></v-switch>
+            </v-list-tile-action>
+            <v-list-tile-sub-title>中文</v-list-tile-sub-title>
+          </v-list-tile>
           <v-divider></v-divider>
           <v-list-tile>
-            <v-list-tile-title>
-              <router-link to="/tasks">
+            <router-link to="/tasks">
+              <v-list-tile-title>
                 Check tasks
-              </router-link>
-            </v-list-tile-title>
+              </v-list-tile-title>
+            </router-link>
           </v-list-tile>
           <v-list-tile>
             <v-list-tile-title>
@@ -46,18 +52,27 @@
         <v-slider style="padding-right: 0px; -webkit-app-region: no-drag;" prepend-icon="access_time" v-model="planTime" step="5" color="grey darken-4" max="60" track-color="grey lighten-1" ticks></v-slider>
         <span class="plan-time-label">{{ planTime }} mins</span>
       </v-layout>
-      <v-btn block outline large light :disabled="isSetUp" @click="$router.push({ name: 'working'})">Start</v-btn>
+      <v-layout row wrap>
+        <v-flex justify-center>
+          <v-btn align-center fab large light :disabled="isSetUp" @click="handleButtonClick">
+            <v-icon>play_arrow</v-icon>
+          </v-btn>
+        </v-flex>
+      </v-layout>
     </v-container>
   </v-app>
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
+import store from '../store'
+import { log } from 'util'
+
 export default {
   name: 'Home',
   data() {
     return {
-      playMusic: true,
-      darkTheme: false,
+      ...mapState(['zh_cn', 'darkTheme', 'playMusic']),
       planWork: '',
       planTime: 0
     }
@@ -69,6 +84,21 @@ export default {
     isSetUp() {
       return !this.planWork || !this.planTime
     }
+  },
+  methods: {
+    handleButtonClick() {
+      // this.$store.dispatch('createTask', { text: this.planWork, spend: this.planTime })
+      // this.$store.dispatch('setActiveTask')
+      store.dispatch('createTask', { text: this.planWork, spend: this.planTime })
+      // this.add({ text: this.planWork, spend: this.planTime })
+      // this.setActive()
+      // this.$router.push({ name: 'working' })
+    },
+    ...mapActions(['toggleTheme', 'togglePlayMusic', 'toggleChinese']),
+    ...mapActions({
+      add: 'createTask',
+      setActive: 'setActiveTask'
+    })
   }
 }
 </script>

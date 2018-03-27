@@ -7,12 +7,10 @@ import logger from './logger'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
+export default new Vuex.Store({
   modules: {
     tasks,
     config
   },
   plugins: [logger]
 })
-
-export default store

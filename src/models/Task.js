@@ -1,12 +1,13 @@
-import { v4 } from 'uuid'
+// import uuid from 'uuid'
 
 export default class Task {
-  constructor(id = v4(), text = '', completed = false, active = true, spend = 30) {
-    this.id = id
+  constructor(text = '', spend = 30) {
+    console.log(text, spend)
+    // this.id = uuid.v4()
     this.text = text
     this.spend = spend
-    this.active = active
-    this.completed = completed
+    // this.active = active
+    // this.completed = completed
   }
 
   toggleTaskCompleted() {

@@ -13,8 +13,8 @@ if (isDevMode) enableLiveReload()
 const createWindow = async () => {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 375,
-    height: 568,
+    width: 800,
+    height: 600,
     minWidth: 320,
     minHeight: 320,
     maxHeight: 789,
